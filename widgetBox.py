@@ -25,9 +25,8 @@ def clearScreen():
 def getWeather(input):
     if input == 0:
         global forecast_title, forecast_desc
-        if len(forecast_title) > 0:
-            forecast_title = []
-            forecast_desc = []
+        forecast_title = []
+        forecast_desc = []
         d = feedparser.parse('http://open.live.bbc.co.uk/weather/feeds/en/ky6/3dayforecast.rss')
         for x, xitem in enumerate(d.entries):
             forecast_title.append(d.entries[x].title.split(","))
